@@ -1,8 +1,10 @@
 package com.onyx.rssreader.models
 
 import android.os.Parcelable
+import com.squareup.moshi.JsonClass
 import kotlinx.parcelize.Parcelize
 
+@JsonClass(generateAdapter = true)
 @Parcelize
 data class Article (
     val title: String,
