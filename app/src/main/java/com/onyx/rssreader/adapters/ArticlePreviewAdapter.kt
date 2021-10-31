@@ -38,7 +38,7 @@ class ArticlePreviewAdapter: RecyclerView.Adapter<ArticlePreviewAdapter.ArticleP
             holder.itemBinding.ivImage.setColorFilter(color)
         }
         holder.itemView.setOnClickListener { view ->
-            val direction = HomeFragmentDirections.actionHomeFragmentToArticleFragment()
+            val direction = HomeFragmentDirections.actionHomeFragmentToArticleFragment(currentArticlePreview)
             view.findNavController().navigate(direction)
         }
     }

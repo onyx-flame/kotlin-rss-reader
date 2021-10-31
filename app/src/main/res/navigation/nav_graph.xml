@@ -22,5 +22,9 @@
         <action
             android:id="@+id/action_articleFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <argument
+            android:name="article"
+            app:argType="com.onyx.rssreader.models.Article"
+            app:nullable="true" />
     </fragment>
 </navigation>
