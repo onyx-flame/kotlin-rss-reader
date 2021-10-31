@@ -41,6 +41,10 @@ class ArticleFragment : Fragment(R.layout.fragment_article) {
         binding.webView.settings.loadWithOverviewMode = true
         binding.webView.settings.javaScriptEnabled = true
         binding.webView.webChromeClient = WebChromeClient()
+        var mainContent = args.article?.content
+        if (mainContent.isNullOrEmpty()) {
+            mainContent = args.article?.description
+        }
         binding.webView.loadDataWithBaseURL(
             null,
             "<style>img{display: inline; height: auto; max-width: 100%;}</style>\n" +
@@ -48,7 +52,7 @@ class ArticleFragment : Fragment(R.layout.fragment_article) {
                     "<h1>" + args.article?.title + "</h1>" +
                     "<h6 align=\"right\">" + args.article?.pubDate + "</h6>" +
                     "<img src=\"" + args.article?.image + "\" alt=\"Image Preview\">" +
-                    args.article?.content, null, "utf-8", null
+                    mainContent, null, "utf-8", null
         )
     }
 
